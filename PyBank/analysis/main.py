@@ -1,9 +1,9 @@
 import os
 import csv
 
-csvpath=os.path.join("..", "Resources", "budget_data.csv")
+csvpath = os.path.join("..", "Resources", "budget.csv")
 
-with open(csvpath,) as csvfile:
+with open(budget_data.csv,) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
     totalmonths=[]
