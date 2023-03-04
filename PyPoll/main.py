@@ -3,8 +3,8 @@ import csv
 
 electiondata=os.path.join("Resources", "election_data.csv")
 
-with open(electiondata) as csvfile:
-    csvreader=csv.reader(csv, deliminator=",")
+with open(electiondata, 'r') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
     print(header)
 
@@ -30,9 +30,9 @@ with open(electiondata) as csvfile:
 totalv = vote1+vote2+vote3
 
 #percentages
-cant1_percent = ((vote1/totalvotes)*100)
-cant2_percent = ((vote2/totalvotes)*100)
-cant3_percent = ((vote3/totalvotes)*100)
+cant1_percent = ((vote1/totalv)*100)
+cant2_percent = ((vote2/totalv)*100)
+cant3_percent = ((vote3/totalv)*100)
 
 #winner winner chicken dinner 
 
@@ -59,7 +59,7 @@ file_path = os.path.join("Poll.txt")
 with open(txtfile, "w") as text_file:
 
     text_file.write("Election Results ")
-    text_file.write("Total Votes: ", str(totalv))
-    text_file.write("Charles Casper Stockham: ", str(cant1_percent), "(", vote1, ")")
-    text_file.write("Diana DeGette:", str(cant3_percent), "(", vote3, ")")
-    text_file.write("Raymon Anthony Doane: ", str(cant3_percent), "(", vote3, ")")
+    text_file.write("Total Votes: " + str(totalv))
+    text_file.write("Charles Casper Stockham: " + str(cant1_percent) + str(vote1) )
+    text_file.write("Diana DeGette:" + str(cant3_percent) + str(vote2) )
+    text_file.write("Raymon Anthony Doane: "+ str(cant3_percent) + str(vote3) )
